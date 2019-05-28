@@ -58,7 +58,7 @@
     position: relative;
     width: 10px;
     height: 20px;
-    bottom: 118px;
+    bottom: 80px;
     right: -32px;
 } 
 div.caret {
@@ -67,6 +67,23 @@ div.caret {
     height: 3px;
     background: #545654;
     margin-top: 2px;
+}
+.modifyMe{
+    width: 60px;
+    position: relative;
+    display: inline-block;
+    background: #d4d4d4;
+    margin-top: -99px;
+    right: -87px;
+}
+ul.modifyMe li{
+    display: block;
+    margin-left: -36px;
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+}
+li:hover{
+    background: #ccc;
 }
 footer {
     position: fixed;
