@@ -33,17 +33,17 @@
      
    </div>
    <div id="postContainer" class="inline fltLeft" >
-     <div class="postTxt" *ngFor="let p of post; let i =index">
+     <div class="postTxt" *ngFor="let p of post; let i = index">
       <div>{{p.postTxt}}
-          <div class="clscaretContainer inline fltRight curPointer" (click)="modifyTxt=true">
+          <div class="clscaretContainer inline fltRight curPointer" (click)="modifyCont(i)">
               <div class="caret"></div>
               <div class="caret"></div>
               <div class="caret"></div>
             </div> 
       </div> 
-      <ul class="modifyMe fltRight inline" *ngIf="modifyTxt">
+      <ul class="modifyMe fltRight inline" *ngIf="modifyTxt==i">
         <!-- <li>Edit</li> -->
-        <li (click)="modifyTxt=false">Delete</li>
+        <li (click)="getiIndex(i)" *ngIf="modifyTxt">Delete</li>
       </ul>
       
     </div> 
