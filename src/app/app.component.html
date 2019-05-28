@@ -1,0 +1,51 @@
+<div *ngIf="isLogged==true; else notset" id="loginContainer">
+ 
+    <h1>
+      Welcome to  <strong>{{title}}</strong>
+    </h1>
+        <label>Name:</label>
+        <input type="text" name="uName" [(ngModel)]="uName" (keyup)="uName" placeholder="User Name" required ngModel>
+
+        <label>Password:</label>
+        <input type="text" name="pass" placeholder="Password" required ngModel>
+      <button  name="Login" (click)="onSubmit()" class="curPointer">Login</button>
+    </div>
+
+<ng-template #notset>
+  <div id="mainWrapper">
+    <header> 
+        <div id="headerWrapper" class="fltRight">
+          <div id="userImg" class="inline curPointer"></div>
+          <div class="inline curPointer" title={{userName}}>{{userName}}</div>
+          <div id="logOut" title={{logOut}} class="curPointer inline" (click)="fnLogOut()">
+            <div id="lgOutImg" class="inline"></div>
+            <span>{{logOut}}</span>
+          </div>
+        </div>
+    </header> 
+    <div id="sideBar" class="inline fltLeft">
+     <div id="userImage"></div>
+     <div>
+       <p>User Name:- {{userName}}</p>
+       <p>Date of Birth:- {{dob}}</p>
+       <p>company:- {{companyName}}</p>
+     </div>
+     
+   </div>
+   <div id="postContainer" class="inline fltLeft" >
+     <div class="postTxt" *ngFor="let p of post; let i =index">
+      <div>{{p.postTxt}}
+          <div class="clscaretContainer inline fltRight curPointer">
+              <div class="caret"></div>
+              <div class="caret"></div>
+              <div class="caret"></div>
+            </div> 
+      </div> 
+      
+    </div> 
+   </div>
+   <footer>
+     <p class="txtcenter">© 2019, Aarya.ai. All rights reserved.Privacy Policy</p>
+   </footer>
+  </div>
+</ng-template>
